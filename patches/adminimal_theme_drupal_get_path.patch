@@ -1,0 +1,12 @@
+diff --git a/themes/contrib/adminimal_theme/adminimal_theme.theme b/themes/contrib/adminimal_theme/adminimal_theme.theme
+index 79fba26e..478affac 100644
+--- a/themes/contrib/adminimal_theme/adminimal_theme.theme
++++ b/themes/contrib/adminimal_theme/adminimal_theme.theme
+@@ -46,6 +46,7 @@ function adminimal_theme_form_system_theme_settings_alter(&$form, FormStateInter
+   $old_css_path = $adminimal_path . '/css/custom.css';
+   $custom_css_path = 'public://adminimal-custom.css';
+   $custom_css_dir = str_replace($base_url . '/', "", \Drupal::service('file_url_generator')->generateAbsoluteString($custom_css_path));
++  $custom_css_url = \Drupal::service('file_url_generator')->generateAbsoluteString($custom_css_path);
+ 
+   // Try to create the adminimal-custom.css file automatically.
+   if (!file_exists($custom_css_path)) {
