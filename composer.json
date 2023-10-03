@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.4",
         "drupal/adminimal_theme": "^1.7",
         "drupal/core-composer-scaffold": "^10.0",
@@ -36,7 +37,8 @@
             "drupal/core-project-message": true,
             "drupal/core-vendor-hardening": true,
             "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
     },
@@ -74,6 +76,12 @@
             "themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ]
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/adminimal_theme": {
+                "Custom Patch description": "patches/adminimal_theme_drupal_get_path.patch"
+            }
         },
         "drupal-core-project-message": {
             "include-keys": [
